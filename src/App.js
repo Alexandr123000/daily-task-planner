@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button, ButtonGroup } from '@chakra-ui/react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           daily task planner
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ButtonGroup isAttached float={"left"}>
+        <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"2%"} mr={"1%"}>BTN</Button>
+        <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
+        <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
+        <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
+        </ButtonGroup>
+      {/*}        <Breadcrumb>
+      <BreadcrumbItem>
+      <BreadcrumbLink>nnn</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+      <BreadcrumbLink>nnn</BreadcrumbLink>
+      </BreadcrumbItem>
+            <BreadcrumbItem>
+      <BreadcrumbLink>nnn</BreadcrumbLink>
+      </BreadcrumbItem>
+      
+      </Breadcrumb>*/}
       </header>
+
     </div>
   );
 }
