@@ -68,9 +68,83 @@ body {
   opacity: 0.8;
 }
 
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50%;
+  background: transparent;
+  color: #00e5d9;
+  cursor: default;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
 
 
-code {
+.day-cell:not(.other-month) {
+  cursor: pointer;
+}
+
+.day-cell:not(.other-month):hover {
+  background: rgba(0, 229, 217, 0.12);
+  box-shadow: 0 0 12px rgba(0, 229, 217, 0.15);
+}
+
+/*Other days*/
+.day-cell.other-month {
+  color: #226666;
+  cursor: default;
+}
+
+/*Today*/
+.day-cell.today {
+  background: rgba(0, 229, 217, 0.20);
+  border: 2px solid #00e5d9;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 229, 217, 0.25);
+}
+
+
+/*Selected day*/
+.day-cell.selected {
+  background: #00e5d9;
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 25px #00e5d9;
+}
+
+.day-cell.selected:hover {
+  background: #66fff5;
+}
+
+/*******/
+
+@media (max-width: 420px) {
+  .calendar-container {
+    width: 100%;
+    padding: 20px 16px 25px;
+    border-radius: 16px;
+  }
+  .calendar-header .month-year {
+    font-size: 1.3rem;
+  }
+  .day-cell {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/*code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+}*/
