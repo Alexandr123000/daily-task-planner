@@ -33,11 +33,10 @@ function App() {
           <div className="days-grid" id="daysGrid"></div>
         </div>
       </header>
-      {NM()}
     </div>
   );
 }
-
+NM();
 
 
 export default App;
