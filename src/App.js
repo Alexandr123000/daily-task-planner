@@ -4,19 +4,33 @@ import { Button, ButtonGroup } from '@chakra-ui/react';
 import { DatePicker } from "@chakra-ui/react"
 import { today, getLocalTimeZone} from "@internationalized/date"
 import { useState } from "react"
-import NM from "./Calendar-scripts"
+import { useEffect } from "react"
+import Calendar from "./Calendar-scripts"
+import Header from "./Header-scripts"
 
 function App() {
+  useEffect(() => {
+    Calendar();
+    Header();
+  }, []);
   return (
-
     <div className="App">
       <header className="App-header">
-        <ButtonGroup isAttached float={"left"}>
+      <a href="#">
+        <span id="Name">Daily Task Planner</span>
+      </a>
+      <nav className="nav">
+        <button className="nav-link active" data-page="todo">Todo List</button>
+        <button className="nav-link" data-page="calendar">Calendar</button>
+        <button className="nav-link login" data-page="login">Login / Register</button>
+      </nav>
+      </header>
+        {/*<ButtonGroup isAttached float={"left"}>
         <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"2%"} mr={"1%"}>BTN</Button>
         <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
         <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
         <Button fontSize={"11px"} bg={"red"} h={"30px"} w={"70px"} ml={"4%"} mr={"1%"}>BTN</Button>
-        </ButtonGroup>
+        </ButtonGroup>*/}
         <p>
           Daily Task Planner
         </p>
@@ -32,11 +46,7 @@ function App() {
           </div>
           <div className="days-grid" id="daysGrid"></div>
         </div>
-      </header>
     </div>
   );
 }
-NM();
-
-
 export default App;

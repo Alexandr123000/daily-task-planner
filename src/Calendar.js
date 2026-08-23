@@ -1,6 +1,0 @@
-{/*some code*/}
-{/*class Application {
-
-
-
-}*/}

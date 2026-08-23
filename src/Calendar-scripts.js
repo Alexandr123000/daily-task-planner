@@ -1,6 +1,6 @@
 /*import { ToastTitle } from "@chakra-ui/react";*/
 
-export default function NM() {
+export default function Calendar() {
     'use strict';
 
     const monthYearEl = document.getElementById('monthYear');
