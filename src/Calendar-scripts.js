@@ -2,16 +2,13 @@
 
 export default function Calendar() {
     'use strict';
-
     const monthYearEl = document.getElementById('monthYear');
     const daysGrid = document.getElementById('daysGrid');
     const prevBtn = document.getElementById('prevMonth');
     const nextBtn = document.getElementById('nextMonth');
-
     let currentDate = new Date(); //today
     let currentYear = currentDate.getFullYear(); //today
     let currentMonth = currentDate.getMonth();
-
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June', 
         'July', 'August', 'September', 'October', 'November', 'December' 
