@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +10,14 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  place-items: center;
 }
-
 html {
   height: 100%;
 }
 /**************************************************************************/
 /**************************************************************************/
 /**********************************Header**********************************/
-
 .App-header {
   background: #0a0a0a;
   border-radius: 24px;
@@ -109,7 +107,6 @@ html {
   background: #66fff5;
   box-shadow: 0 0 30px #00e5d9;
 }
-
 @media (max-width: 640px) {
   .header-container {
     flex-direction: column;
@@ -130,7 +127,6 @@ html {
     font-size: 0.85rem;
   }
 }
-
 /**************************************************************************/
 /**************************************************************************/
 /*********************************Calendar*********************************/
@@ -141,6 +137,7 @@ html {
   width: 380px;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
   border: 1px solid #1a2a2a;
+  margin-top: 180px;
 }
 .calendar-header {
   display: flex;
@@ -230,7 +227,6 @@ html {
 .day-cell.selected:hover {
   background: #66fff5;
 }
-
 @media (max-width: 420px) {
   .calendar-container {
     width: 100%;
@@ -250,7 +246,6 @@ html {
 main {
   flex: 1;
 }
-
 .App-footer {
   background: #0a0a0a;
   border-radius: 24px;
@@ -270,20 +265,22 @@ main {
   flex-grow: 0;
   flex-shrink: 0;
 }
-
+/**************************************************************************/
+/**************************************************************************/
+/***********************************Task***********************************/
 /*MC*/
 .task-app {
   background: #0a0a0a;
   border-radius: 24px;
   padding: 32px 28px 35px;
-  width: 100%;
-  max-width: 560px;
+  width: 1000px;
+  max-width: 1000px;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
   border: 1px solid #1a2a2a;
   transition: box-shadow 0.3s;
+  margin-top: 180px;
 }
-
-.task-app {
+.app-title {
   font-size: 1.8rem;
   font-weight: 600;
   color: #00e5d9;
@@ -294,18 +291,18 @@ main {
   align-items: center;
   gap: 10px;
 }
-
+.task-app:hover {
+  box-shadow: 0 0 45px rgba(0, 255, 255, 0.20);
+}
 .app-title span {
   font-size: 1.9rem;
 }
-
 /*ab*/
 .add-btn-wrap {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
-
 .btn {
   background: #00e5d9;
   color: #000;
@@ -322,17 +319,14 @@ main {
   align-items: center;
   gap: 6px;
 }
-
 .btn:hover {
   background: #66fff5;
   box-shadow: 0 0 35px rgba(0, 229, 217, 0.45);
   transform: scale(1.04);
 }
-
 .btn:active {
   transform: scale(0.96);
 }
-
 /*TL*/
 .task-list {
   display: flex;
@@ -341,7 +335,6 @@ main {
   min-height: 120px;
   padding: 4px 0;
 }
-
 .task-empty {
   color: #226666;
   text-align: center;
@@ -350,9 +343,8 @@ main {
   letter-spacing: 0.3px;
   border: 1px dashed #1a2a2a;
   border-radius: 16px;
-  background: rgba(0, 229, 217, 0.3);
+  background: rgba(0, 229, 217, 0.03);
 }
-
 .task-item {
   background: rgba(0, 229, 217, 0.05);
   border: 1px solid #1a2a2a;
@@ -364,27 +356,23 @@ main {
   transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
   animation: fadeIn 0.25s ease;
 }
-
 .task-item:hover {
   background: rgba(0, 229, 217, 0.09);
   border-color: #00e5d9;
   box-shadow: 0 0 16px rgba(0, 229, 217, 0.08);
 }
-
 .task-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
   flex: 1;
 }
-
 .task-name {
   font-size: 1.05rem;
   font-weight: 500;
   color: #e0f7f5;
   letter-spacing: 0.2px;
 }
-
 .task-meta {
   font-size: 0.8rem;
   color: #00d4c7;
@@ -394,14 +382,12 @@ main {
   gap: 14px;
   flex-wrap: wrap;
 }
-
 .task-meta .date,
 .task-meta .time {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
-
 .task-meta .date::before {
   content: "D";
   font-size: 0.8rem;
@@ -410,7 +396,6 @@ main {
   content: "T";
   font-size: 0.8rem;
 }
-
 .task-delete {
   background: none;
   border: none;
@@ -423,17 +408,14 @@ main {
   line-height: 1;
   flex-shrink: 0;
 }
-
 .task-delete:hover {
   background: rgba(255, 70, 70, 0.12);
   color: #ff6b6b;
   transform: scale(1.15);
 }
-
 .task-delete:active {
   transform: scale(0.85);
 }
-
 /*MO*/
 .modal-overlay {
   position: fixed;
@@ -447,11 +429,9 @@ main {
   padding: 20px;
   animation: overlayFade 0.25 ease;
 }
-
 .modal-overlay.open {
   display: flex;
 }
-
 .modal {
   background: #0d0d0d;
   border-radius: 24px;
@@ -462,7 +442,6 @@ main {
   box-shadow: 0 0 60px rgba(0, 255, 255, 0.18);
   animation: modalSlide 0.3s ease;
 }
-
 .modal-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -471,11 +450,9 @@ main {
   margin-bottom: 22px;
   letter-spacing: 0.3px;
 }
-
 .modal-field {
   margin-bottom: 18px;
 }
-
 .modal-field label {
   display: block;
   font-size: 0.8rem;
@@ -486,7 +463,6 @@ main {
   margin-bottom: 5px;
   opacity: 0.8;
 }
-
 .modal-field input {
   width: 100%;
   background: #141414;
@@ -498,16 +474,13 @@ main {
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
 }
-
 .modal-field input:focus {
   border-color: #00e5d9;
   box-shadow: 0 0 20px rgba(0, 229, 217, 0.10);
 }
-
 .modal-field input::placeholder {
   color: #226666;
 }
-
 /*MD*/
 .modal-actions {
   display: flex;
@@ -515,7 +488,6 @@ main {
   margin-top: 24px;
   justify-content: flex-end;
 }
-
 .btn-modal {
   background: #00e5d9;
   color: #000;
@@ -530,31 +502,26 @@ main {
   letter-spacing: 0.3px;
   min-width: 100px;
 }
-
 .btn-modal:hover {
   background: #66fff5;
   box-shadow: 0 0 35px rgba(0, 229, 217, 0.40);
   transform: scale(1.04);
 }
-
 .btn-modal:active {
   transform: scale(0.96);
 }
-
 .btn-modal.cancel {
   background: transparent;
   color: #00d4c7;
   box-shadow: none;
   border: 1px solid #1a2a2a;
 }
-
 .btn-modal.cancel:hover {
   background: rgba(0, 229, 217, 0.07);
   border-color: #00e5d9;
   box-shadow: 0 0 20px rgba(0, 229, 217, 0.08);
   color: #66fff5;
 }
-
 /*An*/
 @keyframes fadeIn {
   0% {
@@ -566,7 +533,6 @@ main {
     transform: translateY(0);
   }
 }
-
 @keyframes overlayFade {
     0% {
     opacity: 0;
@@ -575,7 +541,6 @@ main {
     opacity: 1;
   }
 }
-
 @keyframes modalSlide {
     0% {
     opacity: 0;
@@ -586,7 +551,6 @@ main {
         transform: scale(1) translateY(0); 
   }
 }
-
 /*Rp*/
 @media (max-width: 480px) {
   .task-app {
@@ -632,7 +596,6 @@ main {
     justify-content: center;
   }
 }
-
 @media (max-width: 380px) {
   .task-app {
     padding: 16px 12px 20px;

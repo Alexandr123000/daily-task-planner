@@ -8,11 +8,11 @@ import { useEffect } from "react"
 import Header from "./Header-scripts"
 import ShowCalendar from "./Calendar"
 import Calendar from './Calendar-scripts';
-
-
+import ShowToDoList from './ToDo-List';
 
 function App() {
-  const [show, setShow] = useState(false);
+  const [showCalendar, setCalendarShow] = useState(false);
+  const [showToDo, setTodoShow] = useState(false);
   const [work, workCalendar] = useState(false);
   useEffect(() => {
     Header();
@@ -24,18 +24,17 @@ function App() {
         <span id="Name">Daily Task Planner</span>
       </a>
       <nav className="nav">
-      <button className="nav-link active" data-page="todo">Todo List</button>
-        
+      <button onClick={() => {setTodoShow(true); setCalendarShow(false);}} className="nav-link active" data-page="todo">Todo List</button>
       {/*<button className="nav-link login" data-page="login">Login / Register</button>*/}
-      <button onClick={() => setShow(true)} className="nav-link" data-page="calendar">Calendar</button>
+      <button onClick={() => {setCalendarShow(true); setTodoShow(false);}} className="nav-link" data-page="calendar">Calendar</button>
       </nav>
       </header>
       <main>
           <p>
             Daily Task Planner
           </p>
-          {show && <ShowCalendar />}
-
+          {showCalendar && <ShowCalendar />}
+          {showToDo && <ShowToDoList />}
       </main>
         <footer className="App-footer">
           <nav className="nav">
